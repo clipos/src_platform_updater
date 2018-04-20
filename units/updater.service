@@ -1,0 +1,7 @@
+[Unit]
+Description=CLIP OS system updater
+ConditionPathExists=!/run/update_ready
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/updater

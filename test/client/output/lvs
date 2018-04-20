@@ -1,0 +1,5 @@
+  LV                 VG     Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  core_5.0.0-alpha.1 mainvg -wi-a----- 500.00m                                                    
+  core_5.0.0-alpha.3 mainvg -wi-a----- 500.00m                                                    
+  core_state         mainvg -wi-a----- 512.00m                                                    
+  core_swap          mainvg -wi-a----- 512.00m                                                    

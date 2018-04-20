@@ -1,0 +1,8 @@
+os_name = "clipos"
+
+[core]
+destination = "mainvg"
+size = "500M"
+
+[efiboot]
+destination = "/mnt/efiboot/EFI/Linux"

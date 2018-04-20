@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby ts=2 sts=2 sw=2 et :
+# SPDX-License-Identifier: LGPL-2.1-or-later
+# Copyright © 2019 ANSSI. All rights reserved.
+
+Vagrant.configure("2") do |config|
+  config.vm.provider "libvirt" do |libvirt|
+    # Default VM settings
+    libvirt.cpus = 2
+    libvirt.cputopology sockets: "1", cores: "1", threads: "2"
+    libvirt.memory = 2048
+    libvirt.graphics_type = "spice"
+    libvirt.video_type = "qxl"
+  end
+
+  config.vm.box = "archlinux/archlinux"
+
+  config.vm.define "clipos_updater" do |clipos_updater|
+    # Install build deps and setup test image
+    clipos_updater.vm.provision "shell", path: "provision.sh"
+  end
+
+end
