@@ -9,7 +9,7 @@ root on a conventional system will result in data loss!**
 
 For a more detailed thread model, please see the
 [security objectives](https://docs.clip-os.org/clipos/security.html) and the
-[update model](https://docs.clip-os.org/clipos/updates.html).
+[update model](https://docs.clip-os.org/clipos/update.html).
 
 ## Environment setup
 
