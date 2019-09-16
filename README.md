@@ -110,7 +110,7 @@ $ rsign sign \
 
 1. Retrieve the latest version available on the server:
 
-   * GET https://update.clip-os.org/update/v1/clipos/version
+   * GET `https://update.clip-os.org/update/v1/clipos/version`
 
    As the client sends its current version and its machine-id, the server
    determines the update channel associated with this machine-id and answers
@@ -122,8 +122,8 @@ $ rsign sign \
    * Compare `version` with the current system version from `/etc/os-release`.
    * For core & efiboot packages:
 
-     * GET https://update.clip-os.org/dist/<version>/<product>-<package>
-     * GET https://update.clip-os.org/dist/<version>/<product>-<package>.sig
+     * GET `https://update.clip-os.org/dist/<version>/<product>-<package>`
+     * GET `https://update.clip-os.org/dist/<version>/<product>-<package>.sig`
 
   * Validates the packages using the provided signature and the public key
     stored in the current system partition. Validate the packages versions
