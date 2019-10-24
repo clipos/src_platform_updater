@@ -5,3 +5,5 @@ ConditionPathExists=!/run/update_ready
 [Service]
 Type=simple
 ExecStart=/usr/bin/updater
+# Lower IOWeight to keep the system responsive during background updates
+IOWeight=10
