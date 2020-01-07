@@ -48,12 +48,12 @@ package:
     #!/usr/bin/env bash
     set -o errexit -o nounset -o pipefail
 
-    readonly repo_root_path="$(cosmk repo-root-path)"
-    if [[ -z "${repo_root_path}" ]]; then
-        echo "[!] Not in a CLIP OS toolkit environment!"
+    if [[ -z "$(command -v cosmk)" ]]; then
+        >&2 echo "[!] Could not find \"cosmk\". Aborting."
         exit 1
     fi
 
+    readonly repo_root_path="$(cosmk repo-root-path)"
     readonly updater_version="$(grep version Cargo.toml | head -1 | awk '{ print $3 }' | tr -d \")"
     readonly lvm_version="$(grep version lvm/Cargo.toml | head -1 | awk '{ print $3 }' | tr -d \")"
     readonly ebuild="updater-${updater_version}.ebuild"
@@ -101,6 +101,6 @@ package:
     rm -rf "./crates-io"
 
     # Update ebuild Manifest
-    cosmk run clipos/core -- ebuild "${ebuild_sdk}" manifest --force
+    cosmk run core -- ebuild "${ebuild_sdk}" manifest --force
 
 # vim: set ts=4 sts=4 sw=4 et ft=sh:
